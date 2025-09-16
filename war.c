@@ -15,6 +15,8 @@
 // ============================================================================
 
 // Inclusão das bibliotecas padrão necessárias para entrada/saída, alocação de memória, manipulação de strings e tempo.
+#include <stdio.h>
+#include "war.h"
 
 // --- Constantes Globais ---
 // Definem valores fixos para o número de territórios, missões e tamanho máximo de strings, facilitando a manutenção.
@@ -33,10 +35,13 @@
 // Função principal que orquestra o fluxo do jogo, chamando as outras funções em ordem.
 int main() {
     // 1. Configuração Inicial (Setup):
+    struct Territorio territorios[MAX_TERRITORIOS];
     // - Define o locale para português.
     // - Inicializa a semente para geração de números aleatórios com base no tempo atual.
     // - Aloca a memória para o mapa do mundo e verifica se a alocação foi bem-sucedida.
     // - Preenche os territórios com seus dados iniciais (tropas, donos, etc.).
+    preencherTerritorios(territorios);
+    exibirTerritorios(territorios);
     // - Define a cor do jogador e sorteia sua missão secreta.
 
     // 2. Laço Principal do Jogo (Game Loop):
