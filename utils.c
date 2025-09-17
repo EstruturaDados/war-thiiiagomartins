@@ -152,8 +152,7 @@ int faseDeAtaque(struct Territorio *territorios, int num_territorios, TipoMissao
 // Escolhe uma das missões e atribui ao jogador
 void atribuirMissao(char* missao_escolhida, const char* missoes[], int totalMissoes) {
     // Sorteia uma missão aleatória
-    // int indice_sorteado = rand() % totalMissoes;
-    int indice_sorteado = 1;
+    int indice_sorteado = rand() % totalMissoes;
 
     // Armazena a missão sorteada
     strcpy(missao_escolhida, missoes[indice_sorteado]);
@@ -162,8 +161,7 @@ void atribuirMissao(char* missao_escolhida, const char* missoes[], int totalMiss
 // Escolhe uma das cores e atribui ao jogador
 void atribuirCor(char* cor_escolhida, const char* cores[], int totalCores) {
     // Sorteia uma cor aleatória
-    // int indice_sorteado = rand() % totalCores;
-    int indice_sorteado = 1;
+    int indice_sorteado = rand() % totalCores;
     // Armazena a cor sorteada
     strcpy(cor_escolhida, cores[indice_sorteado]);
 }
