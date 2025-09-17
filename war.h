@@ -13,7 +13,6 @@
 #include <string.h>
 
 // --- Constantes Globais ---
-#define MAX_TERRITORIOS 5
 #define TAM_STRING 100
 
 // --- Estrutura de Dados ---
@@ -34,8 +33,15 @@ struct Territorio {
 
 // Funções de interface com o usuário e de sistema
 void limparBufferEntrada();
+void liberarMemoria(struct Territorio* mapa);
 int getNumCores();
-void preencherTerritorios(struct Territorio territorios[]);
-void exibirTerritorios(const struct Territorio territorios[]);
+void preencherTerritorios(struct Territorio *territorios, int num_territorios);
+void exibirMapa(const struct Territorio *territorios, int num_territorios);
+int alocarMapa();
+void faseDeAtaque(struct Territorio *territorios, int num_territorios);
+void simularAtaque(struct Territorio *atacante, struct Territorio *defensor);
+
+// Função genérica
+int escolherTerritorio(const char* prompt, int num_territorios, int ignorar_territorio);
 
 #endif
